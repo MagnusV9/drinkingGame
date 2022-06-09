@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
         diceRoller.setOnClickListener {
             mediaPlayer.start()
+            mediaPlayer.setVolume(100f,100f)
             timer.start()
             val rolledDice: Int = Dice().rollDice()
             val drawableResource = when (rolledDice){
