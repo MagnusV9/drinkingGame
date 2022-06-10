@@ -4,4 +4,10 @@
     <string name="buttonforrollingdice">buttonForRollingDIce</string>
     <string name="_1">1</string>
     <string name="todo">TODO</string>
+    <string name="play">Play</string>
+    <string name="how_to_play">HOW TO PLAY
+    You roll the dice by clicking on it. When you click on it the music starts running.
+    If you roll 6 you can pass the phone over to the next person.
+    The person who holds the phone when the beat drops lost and should drink.</string>
+    <string name="how_to_play_the_game">HOW TO PLAY THE GAME.</string>
 </resources>
