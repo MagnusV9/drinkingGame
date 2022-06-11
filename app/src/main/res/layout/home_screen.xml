@@ -12,10 +12,9 @@
         android:text="@string/play"
         app:layout_constraintBottom_toTopOf="@+id/howToPlay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintTop_toTopOf="@+id/fragment_play_screen"
+        app:layout_constraintVertical_bias="0.788" />
 
     <Button
         android:id="@+id/howToPlay"
@@ -24,13 +23,13 @@
         android:text="@string/how_to_play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintVertical_bias="0.366"
+        tools:text="How to play" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/play_description"
         android:layout_width="182dp"
         android:layout_height="350dp"
         android:text="@string/how_to_play_the_game"
@@ -42,7 +41,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.291"
         tools:ignore="TextContrastCheck"
-        tools:visibility="visible" />
+        tools:text="To play the game:  First click on the play button.  Then click on the dice, once the dice is clicked music will start playing. When you throw a 6 on the dice you can pass the device over to the next person.  The person that holds the device when the beat drops loses."
+        tools:visibility="invisible" />
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_play_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
