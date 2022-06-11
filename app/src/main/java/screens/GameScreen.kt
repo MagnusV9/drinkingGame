@@ -10,4 +10,5 @@ class GameScreen(gameScreen: Object) : Fragment() {
     // skal gjøre det.
 
 
+
 }
