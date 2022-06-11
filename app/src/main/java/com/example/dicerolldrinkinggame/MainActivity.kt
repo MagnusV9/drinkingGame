@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game_screen)
+        val allScreens = mapOf("gameScreen" to R.layout.game_screen, "homeScreen" to R.layout.home_screen, "winScreen" to R.layout.win_screen)
         val diceRoller: ImageButton = findViewById(R.id.diceButton)
         val animation = AnimationUtils.loadAnimation(this,R.anim.jiggle)
         val mediaPlayer: MediaPlayer = MediaPlayer.create(this, R.raw.opus_remix)
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
         diceRoller.setOnClickListener {
             mediaPlayer.start()
             mediaPlayer.setVolume(100f,100f)
@@ -58,3 +60,5 @@ class MainActivity : AppCompatActivity() {
 
 // https://www.youtube.com/watch?v=I2cdYnCyoDk&ab_channel=CodingDemos
 // flere animasjoner.
+
+//https://developer.android.com/guide/fragments

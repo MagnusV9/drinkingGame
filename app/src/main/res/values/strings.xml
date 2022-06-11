@@ -10,4 +10,6 @@
     If you roll 6 you can pass the phone over to the next person.
     The person who holds the phone when the beat drops lost and should drink.</string>
     <string name="how_to_play_the_game">HOW TO PLAY THE GAME.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
