@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.291"
         tools:ignore="TextContrastCheck"
         tools:text="To play the game:  First click on the play button.  Then click on the dice, once the dice is clicked music will start playing. When you throw a 6 on the dice you can pass the device over to the next person.  The person that holds the device when the beat drops loses."
-        tools:visibility="invisible" />
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/menue"
@@ -50,6 +50,6 @@
         app:layout_constraintBottom_toTopOf="@+id/play_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="gone" />
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
