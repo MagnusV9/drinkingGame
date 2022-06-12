@@ -14,7 +14,10 @@
         android:theme="@style/Theme.DiceRollDrinkingGame"
         tools:targetApi="31">
         <activity
-            android:name=".gameActivity"
+            android:name=".Win_screen"
+            android:exported="false" />
+        <activity
+            android:name="screens.gameActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
