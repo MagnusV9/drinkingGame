@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/layout/fragment_play_screen.xml" value="0.1770516717325228" />
         <entry key="app/src/main/res/layout/game_screen.xml" value="0.33" />
         <entry key="app/src/main/res/layout/home_screen.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/win_screen.xml" value="0.39945652173913043" />
       </map>
     </option>
   </component>

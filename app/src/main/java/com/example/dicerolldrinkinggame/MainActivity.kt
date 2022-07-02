@@ -1,11 +1,11 @@
 package com.example.dicerolldrinkinggame
 
 import android.media.MediaPlayer
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.animation.AnimationUtils
+import android.widget.Button
 import android.widget.ImageButton
 import dice.Dice
 
@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game_screen)
-        val allScreens = mapOf("gameScreen" to R.layout.game_screen, "homeScreen" to R.layout.home_screen, "winScreen" to R.layout.win_screen)
         val diceRoller: ImageButton = findViewById(R.id.diceButton)
         val animation = AnimationUtils.loadAnimation(this,R.anim.jiggle)
         val mediaPlayer: MediaPlayer = MediaPlayer.create(this, R.raw.opus_remix)
+        val restartButton : Button = findViewById(R.id.restart_button)
         // lag en timer for hva som skal skje når du har vunnet
         // link til brukt sang : https://www.youtube.com/watch?v=_lAsGw7evcw&ab_channel=AlexanderPeraltaArevalo
         val timer = object: CountDownTimer(350,350){
@@ -28,11 +28,17 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-
+        restartButton.setOnClickListener(){
+            if (mediaPlayer.isPlaying) {
+                mediaPlayer.pause()
+                mediaPlayer.seekTo(0)
+            }
+        }
         diceRoller.setOnClickListener {
-            mediaPlayer.start()
-            mediaPlayer.setVolume(100f,100f)
-            timer.start()
+                mediaPlayer.start()
+                mediaPlayer.setVolume(100f, 100f)
+                timer.start()
+
             val rolledDice: Int = Dice().rollDice()
             val drawableResource = when (rolledDice){
                 1 -> R.drawable.dice_1
