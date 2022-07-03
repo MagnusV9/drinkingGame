@@ -40,12 +40,27 @@
         android:id="@+id/restart_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="@string/restart"
-        app:layout_constraintBottom_toTopOf="@+id/diceButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lose_description"
+        android:layout_width="236dp"
+        android:layout_height="305dp"
+        android:text="You Lost!\n\npress restart to play again"
+        android:textColor="#FFD700"
+        android:textSize="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.624" />
+        app:layout_constraintVertical_bias="0.494"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

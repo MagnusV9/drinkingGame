@@ -8,6 +8,8 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
+import androidx.core.view.isVisible
 import dice.Dice
 
 class MainActivity : AppCompatActivity() {
@@ -18,17 +20,20 @@ class MainActivity : AppCompatActivity() {
         val animation = AnimationUtils.loadAnimation(this,R.anim.jiggle)
         val mediaPlayer: MediaPlayer = MediaPlayer.create(this, R.raw.opus_remix)
         val restartButton : Button = findViewById(R.id.restart_button)
+        val loseDescription : TextView = findViewById(R.id.lose_description)
+        var runningGameOverCounter = false;
         // lag en timer for hva som skal skje når du har vunnet
         // link til brukt sang : https://www.youtube.com/watch?v=_lAsGw7evcw&ab_channel=AlexanderPeraltaArevalo
-        val gameOver = object : CountDownTimer(126000,126000){
+        val gameOver = object : CountDownTimer(122600,122600){
             override fun onTick(p0: Long) {
 
             }
-            //on finish virker ikke som blir kallt
             override fun onFinish() {
-                // her må du set visibility.
                diceRoller.setVisibility(View.GONE)
-                println("yooo")
+                loseDescription.setVisibility(View.VISIBLE)
+
+
+
             }
 
         }
@@ -48,12 +53,25 @@ class MainActivity : AppCompatActivity() {
                 mediaPlayer.pause()
                 mediaPlayer.seekTo(0)
             }
+            runningGameOverCounter = false
+            gameOver.cancel()
+            if(!diceRoller.isVisible)
+                diceRoller.setVisibility(View.VISIBLE)
+            if(loseDescription.isVisible)
+                loseDescription.setVisibility(View.GONE)
+
         }
         diceRoller.setOnClickListener {
+            if(!mediaPlayer.isPlaying) {
                 mediaPlayer.start()
                 mediaPlayer.setVolume(100f, 100f)
+            }
                 timer.start()
+            if(!runningGameOverCounter){
                 gameOver.start()
+                runningGameOverCounter = true
+            }
+
 
             val rolledDice: Int = Dice().rollDice()
             val drawableResource = when (rolledDice){
